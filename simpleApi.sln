@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleApi", "simpleApi\simpleApi.csproj", "{A365603A-0D0E-4F0E-9036-73D45AE51277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleBlazor", "simpleBlazor\simpleBlazor.csproj", "{3BE7EDD5-F5FA-4052-84D5-CDC14DB26687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A365603A-0D0E-4F0E-9036-73D45AE51277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A365603A-0D0E-4F0E-9036-73D45AE51277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A365603A-0D0E-4F0E-9036-73D45AE51277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A365603A-0D0E-4F0E-9036-73D45AE51277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BE7EDD5-F5FA-4052-84D5-CDC14DB26687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BE7EDD5-F5FA-4052-84D5-CDC14DB26687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BE7EDD5-F5FA-4052-84D5-CDC14DB26687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BE7EDD5-F5FA-4052-84D5-CDC14DB26687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B45BDE9-B4E5-418C-B31D-3AE7BF70B608}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject HttpClient Http
+
+@foreach (var message in _messages)
+{
+    <p>@message.Item1:@message.Item2</p><br>
+}
+
+<MudTextField @bind-Value="Username" Label="Username" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="Message" Label="Message" Variant="Variant.Outlined"></MudTextField>
+
+<MudButton OnClick="SendMessageToServer">Send Message</MudButton>
+
+
+@code {
+    private string Username {get; set;}
+    private string Message {get; set;}
+
+    private List<Tuple<string, string>> _messages = new List<Tuple<string, string>>();
+    private HubConnection _hubConnection;
+    protected override async Task OnInitializedAsync() // bu page render bo'votganda ishlatiladigan metod
+    {
+        _hubConnection = new HubConnectionBuilder()
+        .WithUrl("https://localhost:7109/messages")
+        .Build();
+
+        _hubConnection.On<string, string>(nameof(GetMessage), GetMessage);
+        await _hubConnection.StartAsync();
+    }
+
+    private void GetMessage(string username, string message)
+    {
+        _messages.Add(new Tuple<string, string>(username, message));
+        StateHasChanged(); // pageni qayta render qiberadi
+    }
+    
+    private async Task SendMessageToServer()
+    {
+        if(_hubConnection.State == HubConnectionState.Connected )
+        {
+            await _hubConnection.InvokeAsync("SendMessage", Username, Message); // buyerda sendmessage -> apidigi MessageHub classga tegishli metodni chaqirvotti
+        }
+    }
+}
